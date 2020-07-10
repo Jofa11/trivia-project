@@ -11,7 +11,7 @@
 			<h1>Trivia Game</h1>
 		</header>
 		<main>
-			<section>
+			<section id="initial-page" class="hidden">
 				<h2>Game Instructions</h2>
 				<p>
 					Try to answer a series of questions by clicking the button with the
@@ -19,8 +19,17 @@
 					your best score. Good luck!
 				</p>
 			</section>
+			<section id="game-page">
+				<p class="questions">Then cats take over the world rub face on owner?</p>
+				<div class="btn-div">
+					<button class="answer-btn">Answer A</button>
+					<button class="answer-btn">Answer B</button>
+					<button class="answer-btn">Answer C</button>
+					<button class="answer-btn">Answer D</button>
+				</div>
+			</section>
 			<div class="start">
-				<button id="play">Start Game</button>
+				<button id="play" class="hidden">Start Game</button>
 			</div>
 		</main>
 		<div class="scoreboard">

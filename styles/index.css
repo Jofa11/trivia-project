@@ -34,7 +34,7 @@ p {
 	padding-top: 10em;
 }
 
-button {
+#play {
 	height: 5em;
 	width: 10em;
 	border-radius: 50%;
@@ -57,4 +57,25 @@ button {
 	color: rgb(150, 93, 158);
 	border-radius: 5%;
 	background-color: azure
+}
+
+.hidden {
+	display: none;
+}
+
+.btn-div {
+	
+}
+
+.answer-btn {
+	width: 10em;
+	height: 5em;
+	margin: 2em;
+	border-radius: 5%;
+	color: rgb(150, 93, 158);
+	font-weight: bold;
+}
+
+.questions {
+	font-size: 1.6em;
 }
