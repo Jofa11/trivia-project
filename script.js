@@ -1,4 +1,10 @@
 // function for play button
+const playBtn = document.querySelector('#play');
+playBtn.addEventListener('click', handlePlayBtn);
+function handlePlayBtn() {
+    console.log('game time');
+}
+
 
 // function for scoreboard display and update
 
