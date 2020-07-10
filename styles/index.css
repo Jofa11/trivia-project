@@ -1,3 +1,55 @@
 body {
-	background-color: rgb(142, 179, 179);
+	background-color: rgb(200, 243, 243);
+}
+
+header {
+	color: rgb(150, 93, 158);
+}
+
+h1 {
+	text-align: center;
+	font-size: 3em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+	text-align: center;
+	padding-top: 4em;
+}
+
+h2 {
+	color: rgb(150, 93, 158);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+	color: rgb(150, 93, 158);
+	font-weight: bold;
+	padding: 2em 7em;
+	font-family: sans-serif;
+}
+
+.start {
+	text-align: center;
+	padding-top: 10em;
+}
+
+button {
+	height: 5em;
+	width: 10em;
+	border-radius: 50%;
+	color: rgb(150, 93, 158);
+	font-weight: bold;
+	background-color: azure;
+}
+
+.scoreboard {
+	display: inline-block;
+	margin: 1em;
+	padding: 2em;
+	background-color: azure;
+}
+
+.box {
+	padding: 3em
 }
