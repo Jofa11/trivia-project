@@ -11,17 +11,6 @@ function handlePlayBtn() {
 
 // function for scoreboard display and update
 
-// function for game messages to display
-
-
-
-// function handleAnswerBtn() {
-//     answerBtns.forEach((button) => {
-//         if (button.answer.innerText === button.rightAnswer) {
-//             console.log('Right on man!');
-//         }
-//     })
-// }
 
 // function to end game
 function gameOver() {
@@ -30,7 +19,6 @@ function gameOver() {
 	gamePage.classList.add('hidden');
 	// restart game button appears
 }
-
 
 const questions = [
 	{
@@ -101,36 +89,31 @@ function displayQuestions() {
 }
 
 function iterateQuestionsAndAnswers() {
-    // for (let i = 0; i < questions.length; i++) {
-    //     return 
-    // }
-    questionIndex ++;
-    displayQuestions();
+	questionIndex++;
+	displayQuestions();
+}
+const messages = document.querySelector('.message');
+
+const nextBtn = document.querySelector('.next');
+nextBtn.addEventListener('click', handleNextBtn);
+function handleNextBtn() {
+    messages.innerText = '';
+    iterateQuestionsAndAnswers();
 }
 
-// function to make questions appear
-
-// function to randomize questions
-// function displayQuestions() {
-// 	let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-// 	return randomQuestion;
-//}
 //function for answer buttons
 const answerBtns = document.querySelectorAll('.answer-btn');
-//console.log(answerBtns);
+
 answerBtns.forEach((btn) => {
 	btn.addEventListener('click', handleAnswerBtn);
 });
 
-
-
 function handleAnswerBtn(event) {
-    let answerData = event.target.dataset.answer;
-    console.log(answerData);
-    if (answerData === questions[questionIndex].rightAnswer) {
-			console.log('Right on!');
-		} else {
-            console.log('Wrong dummy!');
-        }
-    iterateQuestionsAndAnswers();
+	let answerData = event.target.dataset.answer;
+	console.log(answerData);
+	if (answerData === questions[questionIndex].rightAnswer) {
+		messages.innerText = 'Correct!';
+	} else {
+		messages.innerText = 'Sorry Incorrect';
+	}
 }
