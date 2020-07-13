@@ -1,12 +1,17 @@
 const initialPage = document.querySelector('.initial-page');
 const gamePage = document.querySelector('.game-page');
+
+const currentScoreBox = document.querySelector('#current');
+let currentScoreValue = 0;
+
 // function for play button
 const playBtn = document.querySelector('#play');
 playBtn.addEventListener('click', handlePlayBtn);
 function handlePlayBtn() {
 	initialPage.classList.add('hidden');
 	gamePage.classList.remove('hidden');
-	displayQuestions();
+    displayQuestions();
+    
 }
 
 // function for scoreboard display and update
@@ -112,7 +117,9 @@ function handleAnswerBtn(event) {
 	let answerData = event.target.dataset.answer;
 	console.log(answerData);
 	if (answerData === questions[questionIndex].rightAnswer) {
-		messages.innerText = 'Correct!';
+        messages.innerText = 'Correct!';
+        currentScoreValue++;
+        currentScoreBox.innerText = currentScoreValue;
 	} else {
 		messages.innerText = 'Sorry Incorrect';
 	}
