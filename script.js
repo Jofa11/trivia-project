@@ -13,15 +13,14 @@ function handlePlayBtn() {
 
 // function for game messages to display
 
-// function for answer buttons
-// const answerBtns = document.querySelectorAll('#btn-div');
-// answerBtns.forEach((btn) => {
-// 	btn.addEventListener('click', handleAnswerBtn);
-// });
-// function handleAnswerBtn() {
-//     let answerData = answerBtns.dataset.answer;
-//     if (questions[0].rightAnswer === answerData)
 
+
+// function handleAnswerBtn() {
+//     answerBtns.forEach((button) => {
+//         if (button.answer.innerText === button.rightAnswer) {
+//             console.log('Right on man!');
+//         }
+//     })
 // }
 
 // function to end game
@@ -32,15 +31,6 @@ function gameOver() {
 	// restart game button appears
 }
 
-// const quesAndAnswers {
-//     questions: [
-//         'What are you gonna do bruh?',
-//         'Do you like that?',
-//         'How do you like them apples?',
-//         'Do you want to get out of here?',
-//         'What is the capital of Thailand?'
-//     ],
-// }
 
 const questions = [
 	{
@@ -100,16 +90,22 @@ const answerIdBtnB = document.querySelector('#displayB');
 const answerIdBtnC = document.querySelector('#displayC');
 const answerIdBtnD = document.querySelector('#displayD');
 
+let questionIndex = 0;
+
 function displayQuestions() {
-	// let randomQuestion = questions[Math.floor(Math.random() * questions.length)].question;
-	// return randomQuestion;
-	// return questions[0].question;
-	// let questionSequence =
-	questionParaTag.innerText = questions[0].question;
-	answerIdBtnA.innerText = questions[0].answer.a;
-	answerIdBtnB.innerText = questions[0].answer.b;
-	answerIdBtnC.innerText = questions[0].answer.c;
-	answerIdBtnD.innerText = questions[0].answer.d;
+	questionParaTag.innerText = questions[questionIndex].question;
+	answerIdBtnA.innerText = questions[questionIndex].answer.a;
+	answerIdBtnB.innerText = questions[questionIndex].answer.b;
+	answerIdBtnC.innerText = questions[questionIndex].answer.c;
+	answerIdBtnD.innerText = questions[questionIndex].answer.d;
+}
+
+function iterateQuestionsAndAnswers() {
+    // for (let i = 0; i < questions.length; i++) {
+    //     return 
+    // }
+    questionIndex ++;
+    displayQuestions();
 }
 
 // function to make questions appear
@@ -119,3 +115,22 @@ function displayQuestions() {
 // 	let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 // 	return randomQuestion;
 //}
+//function for answer buttons
+const answerBtns = document.querySelectorAll('.answer-btn');
+//console.log(answerBtns);
+answerBtns.forEach((btn) => {
+	btn.addEventListener('click', handleAnswerBtn);
+});
+
+
+
+function handleAnswerBtn(event) {
+    let answerData = event.target.dataset.answer;
+    console.log(answerData);
+    if (answerData === questions[questionIndex].rightAnswer) {
+			console.log('Right on!');
+		} else {
+            console.log('Wrong dummy!');
+        }
+    iterateQuestionsAndAnswers();
+}
