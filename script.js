@@ -1,8 +1,13 @@
 const initialPage = document.querySelector('.initial-page');
 const gamePage = document.querySelector('.game-page');
+const endGameMessage = document.querySelector('.game-over');
 
 const currentScoreBox = document.querySelector('#current');
 let currentScoreValue = 0;
+let wrongAnswers = 0;
+
+const playAgainBtn = document.querySelector('.restart');
+playAgainBtn.addEventListener('click', handlePlayAgainButton);
 
 // function for play button
 const playBtn = document.querySelector('#play');
@@ -10,19 +15,7 @@ playBtn.addEventListener('click', handlePlayBtn);
 function handlePlayBtn() {
 	initialPage.classList.add('hidden');
 	gamePage.classList.remove('hidden');
-    displayQuestions();
-    
-}
-
-// function for scoreboard display and update
-
-
-// function to end game
-function gameOver() {
-	// if 3 wrong guesses
-	initialPage.classList.remove('hidden');
-	gamePage.classList.add('hidden');
-	// restart game button appears
+	displayQuestions();
 }
 
 const questions = [
@@ -102,8 +95,8 @@ const messages = document.querySelector('.message');
 const nextBtn = document.querySelector('.next');
 nextBtn.addEventListener('click', handleNextBtn);
 function handleNextBtn() {
-    messages.innerText = '';
-    iterateQuestionsAndAnswers();
+	messages.innerText = '';
+	iterateQuestionsAndAnswers();
 }
 
 //function for answer buttons
@@ -117,10 +110,30 @@ function handleAnswerBtn(event) {
 	let answerData = event.target.dataset.answer;
 	console.log(answerData);
 	if (answerData === questions[questionIndex].rightAnswer) {
-        messages.innerText = 'Correct!';
-        currentScoreValue++;
-        currentScoreBox.innerText = currentScoreValue;
+		messages.innerText = 'Correct!';
+		currentScoreValue++;
+		currentScoreBox.innerText = currentScoreValue;
 	} else {
 		messages.innerText = 'Sorry Incorrect';
+		wrongAnswers++;
+		gameOver();
 	}
+}
+
+// function to end game
+function gameOver() {
+	if (wrongAnswers >= 3) {
+		gamePage.classList.add('hidden');
+		endGameMessage.classList.remove('hidden');
+		playAgainBtn.classList.remove('hidden');
+	}
+}
+
+function handlePlayAgainButton() {
+	endGameMessage.classList.add('hidden');
+	initialPage.classList.remove('hidden');
+	playAgainBtn.classList.add('hidden');
+	currentScoreValue = 0;
+	wrongAnswers = 0;
+	questionIndex = 0;
 }
