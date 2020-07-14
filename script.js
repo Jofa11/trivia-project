@@ -97,6 +97,9 @@ nextBtn.addEventListener('click', handleNextBtn);
 function handleNextBtn() {
 	messages.innerText = '';
 	iterateQuestionsAndAnswers();
+	answerBtns.forEach((btn) => {
+		btn.disabled = false;
+	});
 }
 
 //function for answer buttons
@@ -108,7 +111,7 @@ answerBtns.forEach((btn) => {
 
 function handleAnswerBtn(event) {
 	let answerData = event.target.dataset.answer;
-	console.log(answerData);
+
 	if (answerData === questions[questionIndex].rightAnswer) {
 		messages.innerText = 'Correct!';
 		currentScoreValue++;
@@ -118,6 +121,9 @@ function handleAnswerBtn(event) {
 		wrongAnswers++;
 		gameOver();
 	}
+	answerBtns.forEach((btn) => {
+		btn.disabled = true;
+	});
 }
 
 // function to end game
@@ -136,4 +142,5 @@ function handlePlayAgainButton() {
 	currentScoreValue = 0;
 	wrongAnswers = 0;
 	questionIndex = 0;
+	currentScoreBox.innerText = currentScoreValue;
 }
