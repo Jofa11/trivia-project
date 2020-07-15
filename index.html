@@ -3,10 +3,62 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Trivia Game</title>
+		<title>Star Wars Trivia</title>
 		<link rel="stylesheet" href="styles/index.css" />
 	</head>
 	<body>
+		<header>
+			<h1>STAR WARS TRIVIA</h1>
+		</header>
+		<main>
+			<section class="initial-page">
+				<h2>Game Instructions</h2>
+				<p>
+					Try to answer a series of questions by clicking the button with the
+					correct answer. Three wrong answers and the game is over. Try to beat
+					your best score. Good luck!
+				</p>
+				<div class="start">
+					<button id="play">Start Game</button>
+				</div>
+			</section>
+			<section>
+				<h1 class="game-over hidden">GAME OVER</h1>
+			</section>
+			<section class="game-page hidden">
+				<div>
+					<h1 class="message"></h1>
+				</div>
+				<p class="questions">
+					Will cats take over the world rub face on owner?
+				</p>
+				<div id="btn-div">
+					<button id="displayA" class="answer-btn" data-answer="a">
+						Answer A
+					</button>
+					<button id="displayB" class="answer-btn" data-answer="b">
+						Answer B
+					</button>
+					<button id="displayC" class="answer-btn" data-answer="c">
+						Answer C
+					</button>
+					<button id="displayD" class="answer-btn" data-answer="d">
+						Answer D
+					</button>
+				</div>
+				<div>
+					<button class="next">Next Question</button>
+				</div>
+			</section>
+			<div>
+				<button class="restart hidden">Play Again</button>
+			</div>
+			<div class="scoreboard">
+				<div id="current" class="box">Score</div>
+				<div id="timer" class="box">Timer</div>
+			</div>
+		</main>
+
 		<script src="script.js"></script>
 	</body>
 </html>
