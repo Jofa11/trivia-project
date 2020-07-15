@@ -18,6 +18,8 @@ section {
 	padding-top: 4em;
 }
 
+
+
 h2 {
 	color: rgb(245, 231, 36);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,7 +28,7 @@ h2 {
 p {
 	color: rgb(245, 231, 36);
 	font-weight: bold;
-	padding: 2em 7em;
+	padding: 2em 2em;
 	font-family: sans-serif;
 }
 
@@ -38,7 +40,8 @@ p {
 #play {
 	height: 5em;
 	width: 10em;
-	border-radius: 50%;
+	border: 4px solid black;
+	border-radius: 5%;
 	color: black;
 	font-weight: bold;
 	background-color: rgb(245, 231, 36);
@@ -70,6 +73,7 @@ p {
 	height: 5em;
 	margin: 2em;
 	border-radius: 5%;
+	border: 4px solid black;
 	color: black;
 	font-weight: bold;
 	background-color: rgb(245, 231, 36);
@@ -83,6 +87,7 @@ p {
 	color: black;
 	font-weight: bold;
 	background-color: rgb(245, 231, 36);
+	border: 4px solid black;
 }
 
 .questions {
@@ -96,5 +101,39 @@ p {
 	border-radius: 5%;
 	color: black;
 	font-weight: bold;
+	border: 4px solid black;
 	background-color: rgb(245, 231, 36)
+	
+}
+
+
+@media only screen and (max-width: 800px) {
+	section { 
+		padding-top: 1em;
+	}
+	body {
+		padding-bottom: 15em;
+	}
+	
+	.button-div {
+		padding: 0;
+		height: 75%
+	}
+	p {
+		padding: 0;
+	}
+	.message {
+		font-size: 2em;
+		padding: 0;
+	}
+	.next {
+		padding: -1em;
+	}
+	.game-page {
+		padding: 0;
+		
+	}
+	.next-div {
+		padding: 0;
+	}
 }

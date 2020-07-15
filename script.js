@@ -5,7 +5,7 @@ const endGameMessage = document.querySelector('.game-over');
 const currentScoreBox = document.querySelector('#current');
 let currentScoreValue = 0;
 let wrongAnswers = 0;
-let countdown = 10;
+let countdown = 45;
 
 let setTimer;
 
@@ -19,7 +19,6 @@ function handlePlayBtn() {
 	initialPage.classList.add('hidden');
 	gamePage.classList.remove('hidden');
 	displayQuestions();
-	//clearInterval(setTimer);
 	setTimer = setInterval(timer, 1000);
 }
 
@@ -203,7 +202,7 @@ function handlePlayAgainButton() {
 	wrongAnswers = 0;
 	questionIndex = 0;
 	currentScoreBox.innerText = currentScoreValue;
-	countdown = 10;
+	countdown = 45;
 	timerDisplay.innerHTML = countdown;
 
 }
