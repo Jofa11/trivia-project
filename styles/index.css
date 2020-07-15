@@ -1,6 +1,6 @@
 body {
 	background-color: black;
-	background: url('/styles/Vader.jpg');
+	background: url('./Vader.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	
