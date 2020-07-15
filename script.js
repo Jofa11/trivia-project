@@ -5,7 +5,9 @@ const endGameMessage = document.querySelector('.game-over');
 const currentScoreBox = document.querySelector('#current');
 let currentScoreValue = 0;
 let wrongAnswers = 0;
-let countdown = 60;
+let countdown = 10;
+
+let setTimer;
 
 const playAgainBtn = document.querySelector('.restart');
 playAgainBtn.addEventListener('click', handlePlayAgainButton);
@@ -17,7 +19,8 @@ function handlePlayBtn() {
 	initialPage.classList.add('hidden');
 	gamePage.classList.remove('hidden');
 	displayQuestions();
-	timer();
+	//clearInterval(setTimer);
+	setTimer = setInterval(timer, 1000);
 }
 
 const questions = [
@@ -115,7 +118,7 @@ const questions = [
 		rightAnswer: 'd',
 	},
 	{
-		question: 'What was Finn\'s Stormtrooper code name?',
+		question: "What was Finn's Stormtrooper code name?",
 		answer: {
 			a: 'FN-2187',
 			b: 'Phineas Flynn',
@@ -187,6 +190,8 @@ function gameOver() {
 		gamePage.classList.add('hidden');
 		endGameMessage.classList.remove('hidden');
 		playAgainBtn.classList.remove('hidden');
+		countdown = 0;
+		clearInterval(setTimer)
 	}
 }
 
@@ -198,12 +203,13 @@ function handlePlayAgainButton() {
 	wrongAnswers = 0;
 	questionIndex = 0;
 	currentScoreBox.innerText = currentScoreValue;
-	countdown = 60;
+	countdown = 10;
 	timerDisplay.innerHTML = countdown;
+
 }
 const timerDisplay = document.querySelector('#timer');
 
-const setTimer = setInterval(timer, 1000);
+
 
 function timer() {
 	timerDisplay.innerHTML = countdown;
@@ -213,5 +219,6 @@ function timer() {
 		gamePage.classList.add('hidden');
 		endGameMessage.classList.remove('hidden');
 		playAgainBtn.classList.remove('hidden');
+		clearInterval(setTimer);
 	}
 }

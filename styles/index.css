@@ -1,9 +1,13 @@
 body {
-	background-color: rgb(200, 243, 243);
+	background-color: black;
+	background: url('/styles/Vader.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	
 }
 
 h1 {
-	color: rgb(150, 93, 158);
+	color: rgb(245, 231, 36);
 	text-align: center;
 	font-size: 3em;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,12 +19,12 @@ section {
 }
 
 h2 {
-	color: rgb(150, 93, 158);
+	color: rgb(245, 231, 36);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 p {
-	color: rgb(150, 93, 158);
+	color: rgb(245, 231, 36);
 	font-weight: bold;
 	padding: 2em 7em;
 	font-family: sans-serif;
@@ -35,33 +39,40 @@ p {
 	height: 5em;
 	width: 10em;
 	border-radius: 50%;
-	color: rgb(150, 93, 158);
+	color: black;
 	font-weight: bold;
-	background-color: azure;
+	background-color: rgb(245, 231, 36);
 }
 
 .scoreboard {
 	display: inline-block;
 	margin: 1em;
-	padding-top: 5em;
-	background-color: rgb(200, 243, 243);
+	background-color: black;
+	
 }
 
 .box {
 	display: inline-block;
 	border: 2px black solid;
-	padding: 3em;
-	color: rgb(150, 93, 158);
+	padding: 1em;
+	color: black;
 	border-radius: 5%;
-	background-color: azure
+	background-color: rgb(245, 231, 36);
+	font-size: 2em;
 }
 
 .hidden {
 	display: none;
 }
 
-#btn-div {
-	
+.restart {
+	width: 10em;
+	height: 5em;
+	margin: 2em;
+	border-radius: 5%;
+	color: black;
+	font-weight: bold;
+	background-color: rgb(245, 231, 36);
 }
 
 .answer-btn {
@@ -69,11 +80,21 @@ p {
 	height: 5em;
 	margin: 2em;
 	border-radius: 5%;
-	color: rgb(150, 93, 158);
+	color: black;
 	font-weight: bold;
-	background-color: azure;
+	background-color: rgb(245, 231, 36);
 }
 
 .questions {
 	font-size: 1.6em;
+}
+
+.next {
+	width: 10em;
+	height: 5em;
+	margin: 2em;
+	border-radius: 5%;
+	color: black;
+	font-weight: bold;
+	background-color: rgb(245, 231, 36)
 }
