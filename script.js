@@ -20,52 +20,105 @@ function handlePlayBtn() {
 
 const questions = [
 	{
-		question: 'What are you gonna do bruh?',
+		question: 'What is the name of Han Solo’s ship?',
 		answer: {
-			a: 'nothing',
-			b: 'something',
-			c: 'huh',
-			d: 'win',
+			a: 'Flagship',
+			b: 'Patrol Cruiser',
+			c: 'Empire Ship',
+			d: 'Millennium Falcon',
 		},
 		rightAnswer: 'd',
 	},
 	{
-		question: 'Do you like that?',
+		question:
+			'Who are the masters of the Dark Side that want to rule the galaxy?',
 		answer: {
-			a: 'no',
-			b: 'some',
-			c: 'huh',
-			d: 'why',
+			a: 'Scoundrels',
+			b: 'Sith',
+			c: 'Rebels',
+			d: 'Jawas',
 		},
-		rightAnswer: 'a',
+		rightAnswer: 'b',
 	},
 	{
-		question: 'How do you like them apples?',
+		question: 'Who was the original commander of the Death Star?',
 		answer: {
-			a: 'love em',
-			b: 'what Matt Damon',
-			c: 'I got her phone #',
-			d: 'crying',
+			a: 'Darth Vader',
+			b: 'Matt Damon',
+			c: 'Grand Moff Tarkin',
+			d: 'General Veers',
 		},
 		rightAnswer: 'c',
 	},
 	{
-		question: 'Do you want to get out of here?',
+		question: 'Count Dooku is also known as who?',
 		answer: {
-			a: 'nope',
-			b: 'why',
-			c: 'huh',
-			d: "let's go",
+			a: 'Supreme Leader',
+			b: 'Dookie Man',
+			c: 'Darth Tyrannosaurus',
+			d: 'Darth Tyranus',
 		},
 		rightAnswer: 'd',
 	},
 	{
-		question: 'What is the capital of Thailand?',
+		question: 'What was the name of the planet that the clones were made on?',
 		answer: {
-			a: 'Bangkok',
+			a: 'Kamino',
 			b: 'Murica',
-			c: 'Is that in Texas',
-			d: 'Boston',
+			c: 'Neptune',
+			d: 'Coruscant',
+		},
+		rightAnswer: 'a',
+	},
+	{
+		question:
+			'When Leia, first tells Han Solo that she loves him, what is his reply?',
+		answer: {
+			a: 'Love ya too',
+			b: 'Come again?',
+			c: 'I know.',
+			d: 'Ditto',
+		},
+		rightAnswer: 'c',
+	},
+	{
+		question:
+			'What race of aquatic sentient beings does Jar-Jar Binks belong to?',
+		answer: {
+			a: 'Wookies',
+			b: 'Upnaughts',
+			c: 'Geonosians',
+			d: 'Gungans',
+		},
+		rightAnswer: 'd',
+	},
+	{
+		question: 'Who built C-3P0?',
+		answer: {
+			a: 'Jabba the Hutt',
+			b: 'Anakin Skywalker',
+			c: 'Ewoks',
+			d: 'Lando Calrissian',
+		},
+		rightAnswer: 'b',
+	},
+	{
+		question: 'What planet does Rey live on in The Force Awakens?',
+		answer: {
+			a: 'Lothal',
+			b: 'Murica',
+			c: 'Kamino',
+			d: 'Jakku',
+		},
+		rightAnswer: 'd',
+	},
+	{
+		question: 'What was Finn\'s Stormtrooper code name?',
+		answer: {
+			a: 'FN-2187',
+			b: 'Phineas Flynn',
+			c: 'BB-8',
+			d: 'CT-5555',
 		},
 		rightAnswer: 'a',
 	},
