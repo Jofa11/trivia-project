@@ -1,3 +1,5 @@
+// Variables and event listeners
+
 const initialPage = document.querySelector('.initial-page');
 const gamePage = document.querySelector('.game-page');
 const endGameMessage = document.querySelector('.game-over');
@@ -22,6 +24,7 @@ function handlePlayBtn() {
 	setTimer = setInterval(timer, 1000);
 }
 
+// Game Questions and Answers
 const questions = [
 	{
 		question: 'What is the name of Han Solo’s ship?',
@@ -69,7 +72,7 @@ const questions = [
 		answer: {
 			a: 'Kamino',
 			b: 'Murica',
-			c: 'Neptune',
+			c: 'Geonosis',
 			d: 'Coruscant',
 		},
 		rightAnswer: 'a',
@@ -126,6 +129,59 @@ const questions = [
 		},
 		rightAnswer: 'a',
 	},
+	{
+		question:
+			'The young Jedi Knight, Anakin Skywalker, becomes who in Star Wars?',
+		answer: {
+			a: 'Rey Skywalker',
+			b: 'Darth Vader',
+			c: 'Ben Kenobi',
+			d: 'Emperor Palpatine',
+		},
+		rightAnswer: 'b',
+	},
+	{
+		question: 'What color is Mace Windu’s lightsaber?',
+		answer: {
+			a: 'Blue',
+			b: 'What?',
+			c: 'Red',
+			d: 'Purple',
+		},
+		rightAnswer: 'd',
+	},
+	{
+		question: 'What is the name of Boba Fett’s ship?',
+		answer: {
+			a: 'Speeder',
+			b: 'Y-Wing',
+			c: 'Empire Ship',
+			d: 'Slave 1',
+		},
+		rightAnswer: 'd',
+	},
+	{
+		question:
+			'Who’s the only rebel pilot, besides Luke, to survive all three movies in the original trilogy?',
+		answer: {
+			a: 'Biggs Darklighter',
+			b: 'Goose',
+			c: 'Wedge Antilles',
+			d: 'Sila Kott',
+		},
+		rightAnswer: 'c',
+	},
+	{
+		question:
+			'Who was the last one to jump down the Death Star’s garbage chute?',
+		answer: {
+			a: 'Han Solo',
+			b: 'Leia',
+			c: 'Luke',
+			d: 'Chewbacca',
+		},
+		rightAnswer: 'a',
+	},
 ];
 const questionParaTag = document.querySelector('.questions');
 const answerIdBtnA = document.querySelector('#displayA');
@@ -133,6 +189,7 @@ const answerIdBtnB = document.querySelector('#displayB');
 const answerIdBtnC = document.querySelector('#displayC');
 const answerIdBtnD = document.querySelector('#displayD');
 
+// Display Questions
 let questionIndex = 0;
 
 function displayQuestions() {
@@ -143,6 +200,7 @@ function displayQuestions() {
 	answerIdBtnD.innerText = questions[questionIndex].answer.d;
 }
 
+// Iterates through the questions
 function iterateQuestionsAndAnswers() {
 	questionIndex++;
 	displayQuestions();
@@ -151,6 +209,8 @@ const messages = document.querySelector('.message');
 
 const nextBtn = document.querySelector('.next');
 nextBtn.addEventListener('click', handleNextBtn);
+
+// Function to handle the question button
 function handleNextBtn() {
 	messages.innerText = '';
 	iterateQuestionsAndAnswers();
@@ -190,10 +250,11 @@ function gameOver() {
 		endGameMessage.classList.remove('hidden');
 		playAgainBtn.classList.remove('hidden');
 		countdown = 0;
-		clearInterval(setTimer)
+		clearInterval(setTimer);
 	}
 }
 
+// Function for the play again button
 function handlePlayAgainButton() {
 	endGameMessage.classList.add('hidden');
 	initialPage.classList.remove('hidden');
@@ -204,12 +265,10 @@ function handlePlayAgainButton() {
 	currentScoreBox.innerText = currentScoreValue;
 	countdown = 45;
 	timerDisplay.innerHTML = countdown;
-
 }
 const timerDisplay = document.querySelector('#timer');
 
-
-
+//Function for the game timer
 function timer() {
 	timerDisplay.innerHTML = countdown;
 	if (countdown > 0) {

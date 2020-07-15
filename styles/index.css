@@ -3,7 +3,6 @@ body {
 	background: url('./Vader.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	
 }
 
 h1 {
@@ -17,8 +16,6 @@ section {
 	text-align: center;
 	padding-top: 4em;
 }
-
-
 
 h2 {
 	color: rgb(245, 231, 36);
@@ -51,7 +48,6 @@ p {
 	display: inline-block;
 	margin: 1em;
 	background-color: black;
-	
 }
 
 .box {
@@ -102,22 +98,20 @@ p {
 	color: black;
 	font-weight: bold;
 	border: 4px solid black;
-	background-color: rgb(245, 231, 36)
-	
+	background-color: rgb(245, 231, 36);
 }
 
-
 @media only screen and (max-width: 800px) {
-	section { 
+	section {
 		padding-top: 1em;
 	}
 	body {
 		padding-bottom: 15em;
 	}
-	
+
 	.button-div {
 		padding: 0;
-		height: 75%
+		height: 75%;
 	}
 	p {
 		padding: 0;
@@ -131,7 +125,6 @@ p {
 	}
 	.game-page {
 		padding: 0;
-		
 	}
 	.next-div {
 		padding: 0;
