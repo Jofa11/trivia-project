@@ -4,6 +4,8 @@ const initialPage = document.querySelector('.initial-page');
 const gamePage = document.querySelector('.game-page');
 const endGameMessage = document.querySelector('.game-over');
 
+const winPage = document.querySelector('.winner');
+
 const currentScoreBox = document.querySelector('#current');
 let currentScoreValue = 0;
 let wrongAnswers = 0;
@@ -202,8 +204,12 @@ function displayQuestions() {
 
 // Iterates through the questions
 function iterateQuestionsAndAnswers() {
-	questionIndex++;
-	displayQuestions();
+	if (questionIndex < questions.length - 1) {
+		questionIndex++;
+		displayQuestions();
+	} else if (questionIndex === questions.length - 1 && currentScoreValue > 12) {
+		winner();
+	}
 }
 const messages = document.querySelector('.message');
 
@@ -241,6 +247,15 @@ function handleAnswerBtn(event) {
 	answerBtns.forEach((btn) => {
 		btn.disabled = true;
 	});
+}
+
+// Function to win game
+function winner() {
+	winPage.classList.remove('hidden');
+	winPage.style.display = 'block';
+	gamePage.classList.add('hidden');
+	playAgainBtn.classList.remove('hidden');
+	clearInterval(setTimer);
 }
 
 // function to end game

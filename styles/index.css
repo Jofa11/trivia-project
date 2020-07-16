@@ -22,6 +22,11 @@ h2 {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.congrats {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
 p {
 	color: rgb(245, 231, 36);
 	font-weight: bold;
